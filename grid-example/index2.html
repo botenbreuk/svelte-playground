@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="nl">
+	<head>
+		<title>Test</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+				border-left: 1px solid black;
+				border-bottom: 1px solid black;
+			}
+
+			html,
+			body {
+				height: 100dvh;
+			}
+
+			.grid {
+				height: 100%;
+				display: grid;
+				grid-template-columns: 20% 80%;
+
+				nav {
+					display: grid;
+					align-content: stretch;
+					grid-template:
+						[row1-start] 'top' 10rem [row1-end]
+						[row2-start] 'middle' auto [row2-end]
+						[row3-start] 'bottom' 2rem [row3-end];
+					height: 100%;
+				}
+
+				.content {
+					display: grid;
+					align-content: stretch;
+					grid-template:
+						[row1-start] 'top' minmax(5rem, max-content) [row1-end]
+						[row2-start] 'middle' auto [row2-end]
+						[row3-start] 'bottom' 2rem [row3-end];
+					height: 100%;
+					overflow-y: auto;
+					max-height: 100%;
+
+					main {
+						position: relative;
+						display: flex;
+
+						.list {
+							height: 100%;
+							position: absolute;
+							overflow-y: scroll;
+
+							width: 24%;
+
+							li {
+								padding: 2rem;
+							}
+						}
+
+						.details {
+							width: 76%;
+							max-height: 100%;
+							right: 0;
+							position: absolute;
+							overflow-y: auto;
+
+							display: grid;
+							grid-template-columns: repeat(5, 1fr);
+
+							div {
+								background-color: blue;
+								padding: 5rem;
+							}
+						}
+					}
+
+					div {
+						display: flex;
+						flex-direction: column;
+						gap: 1rem;
+
+						.block {
+							padding: 2rem;
+						}
+					}
+
+					header {
+						position: sticky;
+						top: 0;
+					}
+
+					footer {
+						position: sticky;
+						bottom: 0;
+						background-color: rgb(182, 182, 182);
+					}
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="grid">
+			<nav>
+				<div class="logo">Logo</div>
+				<div class="menu-items">Items</div>
+				<div class="menu-footer">Footer</div>
+			</nav>
+			<div class="content">
+				<header>Header</header>
+				<main>
+					<ul class="list">
+						<li>test</li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<div class="details">
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+						<div>Test block</div>
+					</div>
+				</main>
+				<footer>Footer</footer>
+			</div>
+		</div>
+	</body>
+</html>
