@@ -22,6 +22,7 @@
 				grid-template-columns: 20% 80%;
 
 				nav {
+					position: relative;
 					display: grid;
 					align-content: stretch;
 					grid-template:
@@ -29,6 +30,15 @@
 						[row2-start] 'middle' auto [row2-end]
 						[row3-start] 'bottom' 2rem [row3-end];
 					height: 100%;
+
+					.close-button {
+						width: 20px;
+						background-color: red;
+						position: absolute;
+						top: 0;
+						right: -20px;
+						z-index: 9999;
+					}
 				}
 
 				.content {
@@ -69,6 +79,7 @@
 	<body>
 		<div class="grid">
 			<nav>
+				<div class="close-button">X</div>
 				<div class="logo">Logo</div>
 				<div class="menu-items">Items</div>
 				<div class="menu-footer">Footer</div>
